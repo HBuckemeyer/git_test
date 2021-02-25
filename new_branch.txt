@@ -1,0 +1,229 @@
+Holger Buckemeyer@BGLT0127 MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+core.editor="C:\\Program Files\\Notepad++\\notepad++.exe" -multiInst -notabbar -nosession -noPlugin
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.email=holger.buckemeyer@greenham.com
+user.name=Holger Buckemeyer
+core.longpaths=true
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git
+$ git clone https://github.com/HBuckemeyer/git_test.git
+Cloning into 'git_test'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Receiving objects: 100% (7/7), done.
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git
+$ cd git_test
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ ls
+ README.md  'git up an running.txt'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git mv README.md firstgit.txt
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    README.md -> firstgit.txt
+
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ http://git=school.github.io/visualizing
+bash: http://git=school.github.io/visualizing: No such file or directory
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git checkout -b new_branch
+Switched to a new branch 'new_branch'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git status
+On branch new_branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    README.md -> firstgit.txt
+
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git commit -m "renamed readme"
+[new_branch 7431d64] renamed readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename README.md => firstgit.txt (100%)
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ ls
+ firstgit.txt  'git up an running.txt'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ ls
+ README.md  'git up an running.txt'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        possible.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git add .
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git stash
+Saved working directory and index state WIP on master: 64c90ab add previous command log 'git up and running' and current log 'README.md'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git stash list
+stash@{0}: WIP on master: 64c90ab add previous command log 'git up and running' and current log 'README.md'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git stash show
+ possible.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git checkout new_branch
+Switched to branch 'new_branch'
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git status
+On branch new_branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new_branch.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git add .
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git status
+On branch new_branch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   new_branch.txt
+
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git commit
+[new_branch bd52985] Commit on new_branch only
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_branch.txt
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (new_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git merge new_branch
+Updating 64c90ab..bd52985
+Fast-forward
+ README.md => firstgit.txt | 0
+ new_branch.txt            | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename README.md => firstgit.txt (100%)
+ create mode 100644 new_branch.txt
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git log --oneline
+bd52985 (HEAD -> master, new_branch) Commit on new_branch only
+7431d64 renamed readme
+64c90ab (origin/master, origin/HEAD) add previous command log 'git up and running' and current log 'README.md'
+fabdef1 first commit
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git reset --mixed 64c90ab
+Unstaged changes after reset:
+D       README.md
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        firstgit.txt
+        new_branch.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git add .
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    README.md -> firstgit.txt
+        new file:   new_branch.txt
+
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git commit -m "renamed README.md and new new_branch.txt"
+[master 76b5ab0] renamed README.md and new new_branch.txt
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename README.md => firstgit.txt (100%)
+ create mode 100644 new_branch.txt
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
