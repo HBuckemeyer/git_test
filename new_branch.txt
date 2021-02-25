@@ -227,3 +227,33 @@ Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
+
+Holger Buckemeyer@BGWSDEV04 MINGW64 /c/users/holger buckemeyer/git_test (master)
+$ git remote add origin https://github.com/HBuckemeyer/git_test.git
+
+Holger Buckemeyer@BGWSDEV04 MINGW64 /c/users/holger buckemeyer/git_test (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 242 bytes | 80.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/HBuckemeyer/git_test.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git remote add origin https://github.com/HBuckemeyer/git_test
+error: remote origin already exists.
+
+Holger Buckemeyer@BGLT0127 MINGW64 ~/git/git_test (master)
+$ git push -u origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 2.07 KiB | 2.07 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/HBuckemeyer/git_test.git
+   64c90ab..06279fd  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.

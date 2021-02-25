@@ -101,19 +101,3 @@ $ git commit -m "first commit"
 [master (root-commit) fabdef1] first commit
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
-
-Holger Buckemeyer@BGWSDEV04 MINGW64 /c/users/holger buckemeyer/git_test (master)
-$ git remote add origin https://github.com/HBuckemeyer/git_test.git
-
-Holger Buckemeyer@BGWSDEV04 MINGW64 /c/users/holger buckemeyer/git_test (master)
-$ git push -u origin master
-Enumerating objects: 3, done.
-Counting objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 242 bytes | 80.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/HBuckemeyer/git_test.git
- * [new branch]      master -> master
-Branch 'master' set up to track remote branch 'master' from 'origin'.
-
-Holger Buckemeyer@BGWSDEV04 MINGW64 /c/users/holger buckemeyer/git_test (master)
-$
